@@ -18,7 +18,7 @@ Exemple d'entrée:
   [
     {
       name: 'Crazy Rich Asians',
-      rating: 93
+      rating: 93aliment.food
     },
     {
       name: 'Skyscraper',
@@ -60,7 +60,18 @@ En sortie:
  */
 
 function getMoviesFreshness(movies) {
+  return movies.map((movie) => {
+    if (movie.rating < 60) {
+      movie.label = 'rotten';
+    } else if (movie.rating >= 60 && movie.rating <=75) {
+      movie.label = 'fresh';
+    } else if (movie.rating > 75) {
+      movie.label = 'certified fresh';
+    }
+    return movie
+  })
 }
+
 
 
 

@@ -11,7 +11,7 @@ Il y a là aussi plusieurs façons d'écrire cette fonction, en utilisant indexO
 Une petite difficulté supplémentaire: la recherche être "case insensitive" (insensible à la
 casse), c'est-à-dire qu'une recherche sur 'star' ne doit pas éliminer les chaînes contenant
 'Star'.
-
+https://www.google.com/search?q=js+insensible+%C3%A0+la+case&client=ubuntu&hs=Hdi&channel=fs&ei=00CyW7WiFqePlwTHtbfwBQ&start=10&sa=N&biw=1020&bih=698
 Exemple d'entrée:
   
 1. tableau de chaînes
@@ -37,9 +37,22 @@ Exemple d'entrée:
 
 
  */
-
+const films = [
+  'Mad Max: Fury Road',
+  'Interstellar',
+  'Revenge of the Nerds',
+  'Revenge of the Pink Panther',
+  'Star Wars: Episode I - The Phantom Menace',
+  'Star Wars: Episode II - Attack of the Clones',
+  'Star Wars: Episode III - Revenge of the Sith'
+];
+const research = 'Revenge';
 function searchWordFilter(items, search) {
+search.toLowerCase();
+ return items.filter(film => film.toLowerCase().includes(search))
 }
+console.log(searchWordFilter(films, research));
+
 
 // Ne pas modifier l'export
 module.exports = searchWordFilter;
